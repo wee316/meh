@@ -1,9 +1,50 @@
 <html>
     <head>
         <title>CSIT128_A1</title>
+        <link rel="stylesheet" href="cascade.css">
+        <script>
+            window.onload = function() {
+                // Populate the current date input field
+                document.getElementById('current_date').value = new Date().toISOString().slice(0, 10);
+    
+                // Enable the "Replace" button when the "Find" input has text
+                document.getElementById('find').oninput = function() {
+                    document.getElementById('replace').disabled = this.value.length === 0;
+                };
+    
+                // Perform find-and-replace operation
+                document.getElementById('find_replace').onclick = function() {
+                    var find = document.getElementById('find').value;
+                    var replace = document.getElementById('replace').value;
+                    var message = document.getElementById('message').value;
+                    document.getElementById('message').value = message.replace(new RegExp(find, 'g'), replace);
+                };
+            };
+        </script>
+        <script>
+            function translateText() {
+                var text = document.getElementById('message').value;
+                var targetLanguage = document.getElementsByName('target_language')[0].checked ? 'zh-CN' : (document.getElementsByName('target_language')[1].checked ? 'ja' : 'ko');
+                var url = `https://translate.google.com/?sl=auto&tl=${targetLanguage}&text=${encodeURIComponent(text)}&op=translate`;
+                window.open(url, '_blank');
+            }
+        </script>
+        <style>
+            div.Example101 {
+    background-color: black;
+}
+div.Example102 {
+    background-color: black;
+}
+div.Example103 {
+    background-color: black;
+}
+        </style>
     </head>
     <body>
-        <h1><u>Part 1:</u></h1>
+        
+       
+        <h2>Part 1</h2>
         <br>
         
         <table border="2">
@@ -13,30 +54,238 @@
             </tr>
             <tr>
                 <td rowspan = "3" align = "center" width ="110" height = "100">Student Number /Name /email</td>
-                <td align ="left"  width ="80" height = "40">UOW ID 1</td>
-                <td align = "left"  width ="80" height = "40">Name 1</td>
-                <td align = "left"  width ="150" height = "40">something@gmail.com</td>
+                <td align ="center"  width ="80" height = "40">8248229</td>
+                <td align = "center"  width ="170" height = "40">Wonna Aung</td>
+                <td align = "center"  width ="150" height = "40">weeofilbc1999@gmail.com</td>
             </tr>
             <tr>
                 
-                <td align ="left"  width ="80" height = "40">UOW ID 2</td>
-                <td align = "left"  width ="80" height = "40">Name 2</td>
-                <td align = "left"  width ="150" height = "40">something@gmail.com</td>
+                <td align ="center"  width ="80" height = "40">7900879</td>
+                <td align = "center"  width ="170" height = "40">Henry Tey Yong Sheng</td>
+                <td align = "center"  width ="150" height = "40">hystey001@mymail.sim.edu.sg</td>
             </tr>
             <tr>
                 
-                <td align ="left"  width ="80" height = "40">UOW ID 3</td>
-                <td align = "left"  width ="80" height = "40">Name 3</td>
-                <td align = "left"  width ="150" height = "40">something@gmail.com</td>
+                <td align ="center"  width ="80" height = "40">UOW ID</td>
+                <td align = "center"  width ="170" height = "40">Ervin Pang Hong Xun</td>
+                <td align = "center"  width ="150" height = "40">something@gmail.com</td>
             </tr>
         </table>
         <br>
+        <div class="Example101">
+            <p style="color:black;">YES</p>
+        </div>
+            <br> 
+    <h1>Part 2: Hello World Programs in Different Languages</h1>
+    <ul>
+        <li><a href="#lan_section1">C++</a></li>
+        <li><a href="#lan_section2">C#</a></li>
+        <li><a href="#lan_section3">Python</a></li>
+        <li><a href="#lan_section4">HTML</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th><a id="lan_section1"">C++</a></th>
+        </tr>
+        <tr>
+            <td><img src="images/CPP.png"></td>
+            <td><pre>
+                <code>
+                    #include &lt;iostream&gt;
+                    void main(  ){
+                            cout<< "Hello World!"<< end1;
+                    }
+                 </code>
+            </pre></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th><a id="lan_section2">C#</a></th>
+        </tr>
+        <tr>
+            <td><img src="images/CS.png"></td>
+            <td><pre>
+                <code>
+                using System;
+                    
+                class Program
+                {
+                  static void Main()
+                    {
+                     Console.WriteLine("Hello, World!");
+                            }
+                }
+                   
+                </code>
+            </pre></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th><a id="lan_section3">Python</a></th>
+        </tr>
+        <tr>
+            <td><img src="images/Python-Language.jpg" height=120"></td>
+            <td>
+                <pre>
+                <code>
+                    # Hello World Program in Python
         
+                    print("Hello World!")
+                </code>
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th><a id="lan_section4">HTML</a></th>
+        </tr>
+        <tr>
+            <td><img src="images/HTML.jpg" height="105"></td>
+            <td><pre>
+                <code>
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title&gt;Hello!&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;p&gt;Hello, World!&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                </code>
+            </pre> </td>
+        </tr>
+    </table>
+    <br>
+    <div class="Example102">
+        <p style="color:black;">yes</p>
+    </div>
+        <h2>Part 3: University policies and services</h2>
+        <br>
+        <dl>
+            <dt><b>PLAGIARISM</b></dt>
+            <dd>Plagiarism is treated seriously. If we suspect any work is copied, all students involved are likely to receive zero<br> for the entire assignment. Plagiarism has led to students being expelled from the University.<br> Please click <a href= " https://www.uow.edu.au/student/support-services/learning-development/plagiarism/" target ="_blank">here</a> to read more about Plagiarism</dd>
+        </dl>
+        
+        <dl>
+            <dt><b>ACADEMIC CONSIDERATION</b></dt>
+            <dd>We know that life isn't perfect and there may be a time when you can't hand in an assignment on time, or make it<br> to class or an exam. If you find youself in a situation like this, you may be eligible for Academic Consideration.<br> Academic Consideration is designed to help students when they are sick, injured, or where a serious, unplanned<br> situation has occurred that has affected their ability to study. <br>Please click <a href=" https://www.uow.edu.au/student/admin/academic-consideration/portal/" target ="_blank">here</a> to read more about Academic Consideration.</dd>
+        </dl>
+        
+        <dl>
+            <dt><b>STUDENT SUPPORT ADVISERS</b></dt>
+            <dd>If you have an issue or a problem that is affecting your study, then the Student Support Advisers may be able to<br> help. There are Student Support Advisers available to assist students who are studying at all UOW Campuses and<br> in all UOW Faculties.<br> Please click <a href="https://www.uow.edu.au/student/support-services/advisers/" target ="_blank">here</a> to read more about Student Support Advisers.
+            
+            </dd>
             <br>
-    
-    <a href = "Part2.html"> Part 2</a><br>
-    <a href = "Part3.html"> Part 3</a><br>
-    <a href = "Part4.html"> Part 4</a><br> 
+            <dt>
+                <dd>
+                    Student Support Adviser contact details for Faculty of Engineering and Information Sciences:
+                </dd>
+            </dt>
+            <dt>
+                <dd>
+                    
+                    <table border = "1">
+                        <tr width = "250">
+                            <td  align ="left" width = "250" height = "30" ><b>Ann-Maree Smith</b><br> Bld 40:133,Wollongong Campus<br>(02) 4221 4714<br>Mon-Fri ams@uow.edu.au</td>
+                            <td align ="left" width = "250"><b>Mitz Perez</b><br> Bld 4:105,  Wollongong Campus<br>(02) 4221 3833 Mon-Fri mperez@uow.edu.au</td>
+                        </tr>
+                    </table>
+                </dd>
+            </dt>
+        </dl>
+        
+        <dl>
+            <dt><b>DISABILITY SERVICES</b></dt>
+            <dd>Disability Services provide advice and support for students with a disability or health condition. Our aim is to<br> ensure students with a disability realise their full academic potential. We also provide support for those who are<br> the primary carers for those with a medical condition or disability.<br> Please click <a href = "https://www.uow.edu.au/student/support-services/disability/" target ="_blank">here</a> to read more about Disability Services.</dd>
+        </dl>
+        <br>
+        <div class="Example103">
+            <p style="color:black;">yes</p>
+        </div>
+        <br>
+        <h2>Part 4</h2>
+        <br>
+        <br>
+        <form>
+            <table border="1px">
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" required pattern="[^0-9]*"></td>
+                </tr>
+                <tr>
+                    <td><label for="module_code">Module Code:</label></td>
+                    <td><input type="text" id="module_code" name="module_code"></td>
+                </tr>
+                <tr>
+                    <td><label for="current_date">Current Date:</label></td>
+                    <td><input type="text" id="current_date" name="current_date" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="message">Message:</label></td>
+                    <td><textarea id="message" name="message" rows="3" cols="20" required>Test 202404</textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="find">Find:</label></td>
+                    <td><input type="text" id="find" name="find"></td>
+                </tr>
+                <tr>
+                    <td><label for="replace">Replace:</label></td>
+                    <td><input type="text" id="replace" name="replace" disabled></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="find_replace">Find and Replace</button></td>
+                </tr>
+                <tr>
+                    <td><label for="source_language">Source Language:</label></td>
+                    <td>
+                        <select id="source_language" name="source_language">
+                            <option value="en" selected>English</option>
+                            <option value="ms">Malay</option>
+                            <option value="ja">Japanese</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Target Language:</label></td>
+                    <td>
+                        <input type="radio" id="chinese" name="target_language" value="chinese" checked>
+                        <label for="chinese">Chinese</label>
+                        <input type="radio" id="japanese" name="target_language" value="japanese">
+                        <label for="japanese">Japanese</label>
+                        <input type="radio" id="korean" name="target_language" value="korean">
+                        <label for="korean">Korean</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="translateText()">Translate</button></td>
+                </tr><tr>
+                    <td colspan="2"><input type="reset" value="Reset"></td>
+                </tr>
+            </table>
+        </form>
+
+
+
 
     </body>
 </html>
